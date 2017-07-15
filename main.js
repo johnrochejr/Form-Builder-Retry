@@ -112,18 +112,59 @@ let formData = [
 
 let _fields = document.getElementById('fields');
 
-let _input = document.createElement('input');
-
 
 for (let i = 0; i < formData.length; i++) {
   let _data = formData[i];
 
-  if (_data.type === 'textarea') {
-    _input.label = "Your Comment";
+  console.log(`This is for ${_data.label}`);
+
+    if (_data.type === 'textarea') {
+    // create and append textarea
+    // Create a new element that is a textarea
+    // Why? Because the type of the input is 'textarea'
+
+      let textarea = document.createElement('textarea');
+      textarea.placeholder = _data.label;
+      textarea.id = _data.id;
+
+      _fields.appendChild(textarea);
+
+  } else if (_data.type === 'select') {
+      // create a drop down
+      // provide select options
+
+
+      let select = document.createElement('select');
+      select.id = _data.id;
+
+      let dropDownPlaceHolder = document.createElement('option');
+      dropDownPlaceHolder.value = 0;
+      dropDownPlaceHolder.innerHTML = _data.label;
+
+      select.appendChild(dropDownPlaceHolder);
+
+        for (let i = 0; i < array.length; i++) {
+          array[i]
+        }
+
+
+
+
+
+
+  } else {
+
+    let text = document.createElement('input');
+
+    text.type = _data.type;
+    text.placeholder = _data.label;
+    text.id = _data.id;
+
+
+    _fields.appendChild(text);
+
   }
 }
-
-_fields.appendChild(_input);
 
 
 
