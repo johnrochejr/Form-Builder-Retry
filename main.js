@@ -116,9 +116,10 @@ let _fields = document.getElementById('fields');
 for (let i = 0; i < formData.length; i++) {
   let _data = formData[i];
 
-  console.log(`This is for ${_data.label}`);
+
 
     if (_data.type === 'textarea') {
+
     // create and append textarea
     // Create a new element that is a textarea
     // Why? Because the type of the input is 'textarea'
@@ -143,14 +144,17 @@ for (let i = 0; i < formData.length; i++) {
 
       select.appendChild(dropDownPlaceHolder);
 
-        for (let i = 0; i < array.length; i++) {
-          array[i]
-        }
+      for (let j = 0; j < _data.options.length; j++) {
+        let _opt = _data.options[j];
 
+        let _option = document.createElement('option');
+        _option.value = _opt.value;
+        _option.innerHTML = _opt.label;
 
+        select.appendChild(_option);
+      }
 
-
-
+      _fields.appendChild(select);
 
   } else {
 
