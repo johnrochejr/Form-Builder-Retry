@@ -98,3 +98,77 @@ let formData = [
 // -------- Your Code Goes Below this Line --------
 
 
+// Select element we want to add content to
+// for loop through array
+// Create content
+// Append to DOM
+
+// This will take a if, elfe if, else statement, which goes from most
+// specific to least specific
+
+// if - textarea
+// else if - select
+// else - text
+
+let _fields = document.getElementById('fields');
+
+let _input = document.createElement('input');
+
+
+for (let i = 0; i < formData.length; i++) {
+  let _data = formData[i];
+
+  if (_data.type === 'textarea') {
+    _input.label = "Your Comment";
+  }
+}
+
+_fields.appendChild(_input);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
